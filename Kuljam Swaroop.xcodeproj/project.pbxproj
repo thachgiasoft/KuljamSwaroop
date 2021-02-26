@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		2F230FE325E780FC00461E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F230FE225E780FC00461E35 /* AppDelegate.swift */; };
 		2F230FE525E780FC00461E35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F230FE425E780FC00461E35 /* SceneDelegate.swift */; };
-		2F230FE725E780FC00461E35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F230FE625E780FC00461E35 /* ContentView.swift */; };
+		2F230FE725E780FC00461E35 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F230FE625E780FC00461E35 /* MainView.swift */; };
 		2F230FE925E780FD00461E35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F230FE825E780FD00461E35 /* Assets.xcassets */; };
 		2F230FEC25E780FD00461E35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F230FEB25E780FD00461E35 /* Preview Assets.xcassets */; };
 		2F230FEF25E780FD00461E35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F230FED25E780FD00461E35 /* LaunchScreen.storyboard */; };
 		2F230FFA25E780FE00461E35 /* Kuljam_SwaroopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F230FF925E780FE00461E35 /* Kuljam_SwaroopTests.swift */; };
 		2F23100525E780FE00461E35 /* Kuljam_SwaroopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23100425E780FE00461E35 /* Kuljam_SwaroopUITests.swift */; };
+		2F23101425E7882900461E35 /* KuljamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101325E7882900461E35 /* KuljamView.swift */; };
+		2F23101625E7883800461E35 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101525E7883800461E35 /* DashboardView.swift */; };
+		2F23101825E7884300461E35 /* EbooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101725E7884300461E35 /* EbooksView.swift */; };
+		2F23101A25E7884E00461E35 /* ChaupaiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101925E7884E00461E35 /* ChaupaiView.swift */; };
+		2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC49CB025E8E47A008DCE47 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,7 @@
 		2F230FDF25E780FC00461E35 /* Kuljam Swaroop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kuljam Swaroop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F230FE225E780FC00461E35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F230FE425E780FC00461E35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F230FE625E780FC00461E35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2F230FE625E780FC00461E35 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2F230FE825E780FD00461E35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F230FEB25E780FD00461E35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2F230FEE25E780FD00461E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		2F23100025E780FE00461E35 /* Kuljam SwaroopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kuljam SwaroopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F23100425E780FE00461E35 /* Kuljam_SwaroopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kuljam_SwaroopUITests.swift; sourceTree = "<group>"; };
 		2F23100625E780FE00461E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F23101325E7882900461E35 /* KuljamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuljamView.swift; sourceTree = "<group>"; };
+		2F23101525E7883800461E35 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2F23101725E7884300461E35 /* EbooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbooksView.swift; sourceTree = "<group>"; };
+		2F23101925E7884E00461E35 /* ChaupaiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaupaiView.swift; sourceTree = "<group>"; };
+		2FC49CB025E8E47A008DCE47 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +109,15 @@
 		2F230FE125E780FC00461E35 /* Kuljam Swaroop */ = {
 			isa = PBXGroup;
 			children = (
+				2F23101225E7881500461E35 /* Views */,
 				2F230FE225E780FC00461E35 /* AppDelegate.swift */,
 				2F230FE425E780FC00461E35 /* SceneDelegate.swift */,
-				2F230FE625E780FC00461E35 /* ContentView.swift */,
+				2F230FE625E780FC00461E35 /* MainView.swift */,
 				2F230FE825E780FD00461E35 /* Assets.xcassets */,
 				2F230FED25E780FD00461E35 /* LaunchScreen.storyboard */,
 				2F230FF025E780FD00461E35 /* Info.plist */,
 				2F230FEA25E780FD00461E35 /* Preview Content */,
+				2FC49CB025E8E47A008DCE47 /* Config.swift */,
 			);
 			path = "Kuljam Swaroop";
 			sourceTree = "<group>";
@@ -134,6 +146,17 @@
 				2F23100625E780FE00461E35 /* Info.plist */,
 			);
 			path = "Kuljam SwaroopUITests";
+			sourceTree = "<group>";
+		};
+		2F23101225E7881500461E35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F23101325E7882900461E35 /* KuljamView.swift */,
+				2F23101525E7883800461E35 /* DashboardView.swift */,
+				2F23101725E7884300461E35 /* EbooksView.swift */,
+				2F23101925E7884E00461E35 /* ChaupaiView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F230FE325E780FC00461E35 /* AppDelegate.swift in Sources */,
+				2F23101A25E7884E00461E35 /* ChaupaiView.swift in Sources */,
 				2F230FE525E780FC00461E35 /* SceneDelegate.swift in Sources */,
-				2F230FE725E780FC00461E35 /* ContentView.swift in Sources */,
+				2F23101625E7883800461E35 /* DashboardView.swift in Sources */,
+				2F23101425E7882900461E35 /* KuljamView.swift in Sources */,
+				2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */,
+				2F230FE725E780FC00461E35 /* MainView.swift in Sources */,
+				2F23101825E7884300461E35 /* EbooksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
