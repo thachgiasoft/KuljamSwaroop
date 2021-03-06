@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>396002902305-o3e6jmqmief8k1o82a5e6poojdoopth9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.396002902305-o3e6jmqmief8k1o82a5e6poojdoopth9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAOoGh1ES05WR0nsUCwNJGGZoyvEx_9iws</string>
+	<key>GCM_SENDER_ID</key>
+	<string>396002902305</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>iOS.nijanand.Kuljam-Swaroop</string>
+	<key>PROJECT_ID</key>
+	<string>kuljam-swaroop</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kuljam-swaroop.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:396002902305:ios:b7dc554feab7df46843e60</string>
+	<key>DATABASE_URL</key>
+	<string>https://kuljam-swaroop.firebaseio.com</string>
+</dict>
+</plist>

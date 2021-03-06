@@ -7,10 +7,28 @@
 //
 
 import SwiftUI
-
+import PDFViewer
 
 struct KuljamView: View {
+    
+    let bookListViewModel = BookListViewModel()
+    private var active: Bool = false
+    
     var body: some View {
-        Color.clear
+        
+        NavigationView {
+            ScrollView {
+                GridView(rows: bookListViewModel.rowCount, columns: bookListViewModel.columnCount) { row, column in
+                    if let book = bookListViewModel.getBook(row, column) {
+                        NavigationLink(destination: PDFKitView(displayPDF: book)) {
+                            BookItemView(book: book)
+                        }
+                    } else {
+                        EmptyView()
+                    }
+                }
+            }.padding(.bottom, 10)
+            .navigationBarTitle(!active ? "Kuljam Swaroop" : "", displayMode: !active ? .automatic : .inline )
+        }
     }
 }

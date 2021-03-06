@@ -22,15 +22,15 @@ struct MainView: View {
                       Image(systemName: "squareshape.squareshape.dashed")
                       Text("Nijanand")
                  }
-                 EbooksView()
-                   .tabItem {
-                      Image(systemName: "text.book.closed.fill")
-                      Text("Kuljam")
-                }
                 KuljamView()
                    .tabItem {
                       Image(systemName: "books.vertical")
-                      Text("Ebooks")
+                      Text("Kuljam")
+                }
+                 EbooksView()
+                   .tabItem {
+                      Image(systemName: "text.book.closed.fill")
+                      Text("Ebook")
                 }
                 ChaupaiView()
                    .tabItem {
@@ -45,8 +45,8 @@ struct MainView: View {
 
 
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}

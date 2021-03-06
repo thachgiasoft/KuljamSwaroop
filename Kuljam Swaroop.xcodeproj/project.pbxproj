@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,41 @@
 		2F23101625E7883800461E35 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101525E7883800461E35 /* DashboardView.swift */; };
 		2F23101825E7884300461E35 /* EbooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101725E7884300461E35 /* EbooksView.swift */; };
 		2F23101A25E7884E00461E35 /* ChaupaiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F23101925E7884E00461E35 /* ChaupaiView.swift */; };
+		2F85F28A25F20CB900139802 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85F28925F20CB900139802 /* PDFViewController.swift */; };
+		2F85F29A25F21C4200139802 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29925F21C4200139802 /* FirebaseInAppMessaging-Beta */; };
+		2F85F29C25F21C4200139802 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29B25F21C4200139802 /* FirebaseAnalytics */; };
+		2F85F29E25F21C4200139802 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29D25F21C4200139802 /* FirebaseRemoteConfig */; };
+		2F85F2A025F21C4200139802 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29F25F21C4200139802 /* FirebaseFirestore */; };
+		2F85F2A225F21C4200139802 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F2A125F21C4200139802 /* FirebaseDatabase */; };
+		2F85F2AA25F2201E00139802 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85F2A925F2201E00139802 /* DashboardViewModel.swift */; };
+		2F85F2AF25F2206D00139802 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */; };
+		2F85F2B425F230CB00139802 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85F2B325F230CB00139802 /* Carousel.swift */; };
 		2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC49CB025E8E47A008DCE47 /* Config.swift */; };
+		2FF265C725EDFE4500977380 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF265C625EDFE4500977380 /* BookListViewModel.swift */; };
+		2FF265D225EDFF0200977380 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF265D125EDFF0200977380 /* BookItemView.swift */; };
+		2FF265DD25EE04C300977380 /* PDFContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF265DC25EE04C300977380 /* PDFContentView.swift */; };
+		2FF265E225EE05B300977380 /* raas.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265E125EE05B300977380 /* raas.pdf */; };
+		2FF265F625EE08B500977380 /* prakashhindusthani.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265E625EE08B400977380 /* prakashhindusthani.pdf */; };
+		2FF265F725EE08B500977380 /* khulasa.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265E725EE08B400977380 /* khulasa.pdf */; };
+		2FF265F825EE08B500977380 /* sanandha.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265E825EE08B400977380 /* sanandha.pdf */; };
+		2FF265F925EE08B500977380 /* kalashgujhrati.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265E925EE08B400977380 /* kalashgujhrati.pdf */; };
+		2FF265FA25EE08B500977380 /* sindhi.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265EA25EE08B400977380 /* sindhi.pdf */; };
+		2FF265FB25EE08B500977380 /* prakashgujhrati.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265EB25EE08B400977380 /* prakashgujhrati.pdf */; };
+		2FF265FC25EE08B500977380 /* sagar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265EC25EE08B500977380 /* sagar.pdf */; };
+		2FF265FD25EE08B500977380 /* khataritu.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265ED25EE08B500977380 /* khataritu.pdf */; };
+		2FF265FE25EE08B500977380 /* parikrama.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265EE25EE08B500977380 /* parikrama.pdf */; };
+		2FF265FF25EE08B500977380 /* chhotekayamatnama.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265EF25EE08B500977380 /* chhotekayamatnama.pdf */; };
+		2FF2660025EE08B500977380 /* marfat.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265F025EE08B500977380 /* marfat.pdf */; };
+		2FF2660125EE08B500977380 /* khilawat.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265F125EE08B500977380 /* khilawat.pdf */; };
+		2FF2660225EE08B500977380 /* kirantan.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265F225EE08B500977380 /* kirantan.pdf */; };
+		2FF2660325EE08B500977380 /* singar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265F325EE08B500977380 /* singar.pdf */; };
+		2FF2660425EE08B500977380 /* badekayamatnama.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265F425EE08B500977380 /* badekayamatnama.pdf */; };
+		2FF2660525EE08B500977380 /* kalashhindi.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265F525EE08B500977380 /* kalashhindi.pdf */; };
+		2FFA4FF125F3186A00FECC49 /* iPages in Frameworks */ = {isa = PBXBuildFile; productRef = 2FFA4FF025F3186A00FECC49 /* iPages */; };
+		2FFA4FF625F32D7600FECC49 /* EbooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA4FF525F32D7600FECC49 /* EbooksViewModel.swift */; };
+		2FFA4FFC25F3311400FECC49 /* PDFDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA4FFB25F3311400FECC49 /* PDFDisplayable.swift */; };
+		2FFA500425F332E600FECC49 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA500325F332E600FECC49 /* WebView.swift */; };
+		2FFA500C25F3349800FECC49 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA500B25F3349800FECC49 /* GridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +92,35 @@
 		2F23101525E7883800461E35 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		2F23101725E7884300461E35 /* EbooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbooksView.swift; sourceTree = "<group>"; };
 		2F23101925E7884E00461E35 /* ChaupaiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaupaiView.swift; sourceTree = "<group>"; };
+		2F85F28925F20CB900139802 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		2F85F2A925F2201E00139802 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F85F2B325F230CB00139802 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		2FC49CB025E8E47A008DCE47 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2FF265C625EDFE4500977380 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
+		2FF265D125EDFF0200977380 /* BookItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
+		2FF265DC25EE04C300977380 /* PDFContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFContentView.swift; sourceTree = "<group>"; };
+		2FF265E125EE05B300977380 /* raas.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = raas.pdf; sourceTree = "<group>"; };
+		2FF265E625EE08B400977380 /* prakashhindusthani.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = prakashhindusthani.pdf; sourceTree = "<group>"; };
+		2FF265E725EE08B400977380 /* khulasa.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = khulasa.pdf; sourceTree = "<group>"; };
+		2FF265E825EE08B400977380 /* sanandha.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sanandha.pdf; sourceTree = "<group>"; };
+		2FF265E925EE08B400977380 /* kalashgujhrati.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = kalashgujhrati.pdf; sourceTree = "<group>"; };
+		2FF265EA25EE08B400977380 /* sindhi.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sindhi.pdf; sourceTree = "<group>"; };
+		2FF265EB25EE08B400977380 /* prakashgujhrati.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = prakashgujhrati.pdf; sourceTree = "<group>"; };
+		2FF265EC25EE08B500977380 /* sagar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sagar.pdf; sourceTree = "<group>"; };
+		2FF265ED25EE08B500977380 /* khataritu.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = khataritu.pdf; sourceTree = "<group>"; };
+		2FF265EE25EE08B500977380 /* parikrama.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = parikrama.pdf; sourceTree = "<group>"; };
+		2FF265EF25EE08B500977380 /* chhotekayamatnama.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = chhotekayamatnama.pdf; sourceTree = "<group>"; };
+		2FF265F025EE08B500977380 /* marfat.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = marfat.pdf; sourceTree = "<group>"; };
+		2FF265F125EE08B500977380 /* khilawat.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = khilawat.pdf; sourceTree = "<group>"; };
+		2FF265F225EE08B500977380 /* kirantan.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = kirantan.pdf; sourceTree = "<group>"; };
+		2FF265F325EE08B500977380 /* singar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = singar.pdf; sourceTree = "<group>"; };
+		2FF265F425EE08B500977380 /* badekayamatnama.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = badekayamatnama.pdf; sourceTree = "<group>"; };
+		2FF265F525EE08B500977380 /* kalashhindi.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = kalashhindi.pdf; sourceTree = "<group>"; };
+		2FFA4FF525F32D7600FECC49 /* EbooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbooksViewModel.swift; sourceTree = "<group>"; };
+		2FFA4FFB25F3311400FECC49 /* PDFDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDisplayable.swift; sourceTree = "<group>"; };
+		2FFA500325F332E600FECC49 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2FFA500B25F3349800FECC49 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +128,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F85F2A225F21C4200139802 /* FirebaseDatabase in Frameworks */,
+				2F85F29E25F21C4200139802 /* FirebaseRemoteConfig in Frameworks */,
+				2F85F2A025F21C4200139802 /* FirebaseFirestore in Frameworks */,
+				2F85F29C25F21C4200139802 /* FirebaseAnalytics in Frameworks */,
+				2F85F29A25F21C4200139802 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				2FFA4FF125F3186A00FECC49 /* iPages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,15 +177,17 @@
 		2F230FE125E780FC00461E35 /* Kuljam Swaroop */ = {
 			isa = PBXGroup;
 			children = (
+				2FFA4FFA25F3301F00FECC49 /* Resources */,
+				2FF265C525EDFE2F00977380 /* ViewModel */,
 				2F23101225E7881500461E35 /* Views */,
 				2F230FE225E780FC00461E35 /* AppDelegate.swift */,
 				2F230FE425E780FC00461E35 /* SceneDelegate.swift */,
 				2F230FE625E780FC00461E35 /* MainView.swift */,
-				2F230FE825E780FD00461E35 /* Assets.xcassets */,
-				2F230FED25E780FD00461E35 /* LaunchScreen.storyboard */,
 				2F230FF025E780FD00461E35 /* Info.plist */,
+				2F230FED25E780FD00461E35 /* LaunchScreen.storyboard */,
 				2F230FEA25E780FD00461E35 /* Preview Content */,
 				2FC49CB025E8E47A008DCE47 /* Config.swift */,
+				2FFA4FFB25F3311400FECC49 /* PDFDisplayable.swift */,
 			);
 			path = "Kuljam Swaroop";
 			sourceTree = "<group>";
@@ -155,8 +225,58 @@
 				2F23101525E7883800461E35 /* DashboardView.swift */,
 				2F23101725E7884300461E35 /* EbooksView.swift */,
 				2F23101925E7884E00461E35 /* ChaupaiView.swift */,
+				2FF265D125EDFF0200977380 /* BookItemView.swift */,
+				2FF265DC25EE04C300977380 /* PDFContentView.swift */,
+				2F85F28925F20CB900139802 /* PDFViewController.swift */,
+				2F85F2B325F230CB00139802 /* Carousel.swift */,
+				2FFA500325F332E600FECC49 /* WebView.swift */,
+				2FFA500B25F3349800FECC49 /* GridView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2FF265C525EDFE2F00977380 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2FF265C625EDFE4500977380 /* BookListViewModel.swift */,
+				2F85F2A925F2201E00139802 /* DashboardViewModel.swift */,
+				2FFA4FF525F32D7600FECC49 /* EbooksViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2FF2660925EE08BF00977380 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				2FF265E725EE08B400977380 /* khulasa.pdf */,
+				2FF265F225EE08B500977380 /* kirantan.pdf */,
+				2FF265F025EE08B500977380 /* marfat.pdf */,
+				2FF265EE25EE08B500977380 /* parikrama.pdf */,
+				2FF265EB25EE08B400977380 /* prakashgujhrati.pdf */,
+				2FF265E625EE08B400977380 /* prakashhindusthani.pdf */,
+				2FF265EC25EE08B500977380 /* sagar.pdf */,
+				2FF265E825EE08B400977380 /* sanandha.pdf */,
+				2FF265EA25EE08B400977380 /* sindhi.pdf */,
+				2FF265F325EE08B500977380 /* singar.pdf */,
+				2FF265E125EE05B300977380 /* raas.pdf */,
+				2FF265F425EE08B500977380 /* badekayamatnama.pdf */,
+				2FF265EF25EE08B500977380 /* chhotekayamatnama.pdf */,
+				2FF265E925EE08B400977380 /* kalashgujhrati.pdf */,
+				2FF265F525EE08B500977380 /* kalashhindi.pdf */,
+				2FF265ED25EE08B500977380 /* khataritu.pdf */,
+				2FF265F125EE08B500977380 /* khilawat.pdf */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		2FFA4FFA25F3301F00FECC49 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2660925EE08BF00977380 /* Books */,
+				2F230FE825E780FD00461E35 /* Assets.xcassets */,
+				2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +295,14 @@
 			dependencies = (
 			);
 			name = "Kuljam Swaroop";
+			packageProductDependencies = (
+				2F85F29925F21C4200139802 /* FirebaseInAppMessaging-Beta */,
+				2F85F29B25F21C4200139802 /* FirebaseAnalytics */,
+				2F85F29D25F21C4200139802 /* FirebaseRemoteConfig */,
+				2F85F29F25F21C4200139802 /* FirebaseFirestore */,
+				2F85F2A125F21C4200139802 /* FirebaseDatabase */,
+				2FFA4FF025F3186A00FECC49 /* iPages */,
+			);
 			productName = "Kuljam Swaroop";
 			productReference = 2F230FDF25E780FC00461E35 /* Kuljam Swaroop.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +375,10 @@
 				Base,
 			);
 			mainGroup = 2F230FD625E780FB00461E35;
+			packageReferences = (
+				2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2FFA4FEF25F3186A00FECC49 /* XCRemoteSwiftPackageReference "iPages" */,
+			);
 			productRefGroup = 2F230FE025E780FC00461E35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,8 +396,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F230FEF25E780FD00461E35 /* LaunchScreen.storyboard in Resources */,
+				2FF265FB25EE08B500977380 /* prakashgujhrati.pdf in Resources */,
+				2FF265FA25EE08B500977380 /* sindhi.pdf in Resources */,
+				2FF265F825EE08B500977380 /* sanandha.pdf in Resources */,
 				2F230FEC25E780FD00461E35 /* Preview Assets.xcassets in Resources */,
 				2F230FE925E780FD00461E35 /* Assets.xcassets in Resources */,
+				2FF2660325EE08B500977380 /* singar.pdf in Resources */,
+				2FF2660525EE08B500977380 /* kalashhindi.pdf in Resources */,
+				2FF265FD25EE08B500977380 /* khataritu.pdf in Resources */,
+				2FF265F925EE08B500977380 /* kalashgujhrati.pdf in Resources */,
+				2FF2660225EE08B500977380 /* kirantan.pdf in Resources */,
+				2FF265F625EE08B500977380 /* prakashhindusthani.pdf in Resources */,
+				2FF2660125EE08B500977380 /* khilawat.pdf in Resources */,
+				2FF265FF25EE08B500977380 /* chhotekayamatnama.pdf in Resources */,
+				2FF265F725EE08B500977380 /* khulasa.pdf in Resources */,
+				2FF2660025EE08B500977380 /* marfat.pdf in Resources */,
+				2FF265FE25EE08B500977380 /* parikrama.pdf in Resources */,
+				2FF265FC25EE08B500977380 /* sagar.pdf in Resources */,
+				2FF2660425EE08B500977380 /* badekayamatnama.pdf in Resources */,
+				2FF265E225EE05B300977380 /* raas.pdf in Resources */,
+				2F85F2AF25F2206D00139802 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,13 +440,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF265D225EDFF0200977380 /* BookItemView.swift in Sources */,
+				2F85F2B425F230CB00139802 /* Carousel.swift in Sources */,
 				2F230FE325E780FC00461E35 /* AppDelegate.swift in Sources */,
+				2FFA4FFC25F3311400FECC49 /* PDFDisplayable.swift in Sources */,
 				2F23101A25E7884E00461E35 /* ChaupaiView.swift in Sources */,
+				2F85F28A25F20CB900139802 /* PDFViewController.swift in Sources */,
 				2F230FE525E780FC00461E35 /* SceneDelegate.swift in Sources */,
+				2FF265C725EDFE4500977380 /* BookListViewModel.swift in Sources */,
+				2FFA4FF625F32D7600FECC49 /* EbooksViewModel.swift in Sources */,
 				2F23101625E7883800461E35 /* DashboardView.swift in Sources */,
 				2F23101425E7882900461E35 /* KuljamView.swift in Sources */,
+				2FFA500425F332E600FECC49 /* WebView.swift in Sources */,
+				2FF265DD25EE04C300977380 /* PDFContentView.swift in Sources */,
 				2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */,
+				2F85F2AA25F2201E00139802 /* DashboardViewModel.swift in Sources */,
 				2F230FE725E780FC00461E35 /* MainView.swift in Sources */,
+				2FFA500C25F3349800FECC49 /* GridView.swift in Sources */,
 				2F23101825E7884300461E35 /* EbooksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +626,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Kuljam Swaroop/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Kuljam Swaroop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +646,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Kuljam Swaroop/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Kuljam Swaroop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,6 +778,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.7.0;
+			};
+		};
+		2FFA4FEF25F3186A00FECC49 /* XCRemoteSwiftPackageReference "iPages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iPages.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.13;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F85F29925F21C4200139802 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		2F85F29B25F21C4200139802 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		2F85F29D25F21C4200139802 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		2F85F29F25F21C4200139802 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2F85F2A125F21C4200139802 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F85F29825F21C4200139802 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		2FFA4FF025F3186A00FECC49 /* iPages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FFA4FEF25F3186A00FECC49 /* XCRemoteSwiftPackageReference "iPages" */;
+			productName = iPages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F230FD725E780FB00461E35 /* Project object */;
 }

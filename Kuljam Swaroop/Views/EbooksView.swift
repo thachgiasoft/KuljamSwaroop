@@ -8,65 +8,41 @@
 
 import SwiftUI
 
-struct Book: Hashable {
-
-    var id: Int
-    var title: String
-    var englishName: String
-    var hindiName: String
-
-}
-
 struct EbooksView: View {
     
-    let books: [Book] = [Book(id: 0,title: "raas", englishName: "Raas", hindiName: "रास"),
-                        Book(id: 1, title: "prakashhindusthani", englishName: "Prakash Hindusthani", hindiName: "प्रकाश  हिन्दूस्तानी"),
-                        Book(id: 2, title: "prakashgujhrati", englishName: "Prakash Gujrati", hindiName: "प्रकाश  गुजराती"),
-                        Book(id: 3, title: "khataritu", englishName: "Khataritu", hindiName: "खटरितु"),
-                        Book(id: 4, title: "kalashhindi", englishName: "Kalash Hindi", hindiName: "कलश हिन्दी"),
-                        Book(id: 5, title: "kalashgujhrati", englishName: "Kalash Gujrati", hindiName: "कलश गुजराती"),
-                        Book(id: 6, title: "sagar", englishName: "Sagar", hindiName: "सागर"),
-                        Book(id: 7, title: "singar", englishName: "Singar", hindiName: "सिनगार"),
-                        Book(id: 8, title: "sanandha", englishName: "Sananda", hindiName: "सनन्ध"),
-                        Book(id: 9, title: "sindhi", englishName: "Sindhi", hindiName: "सिन्धी"),
-                        Book(id: 10, title: "parikrama", englishName: "Parikrama", hindiName: "पारीक्रमा"),
-                        Book(id: 11, title: "kirantan", englishName: "Kirantan", hindiName: "किरंतन"),
-                        Book(id: 12, title: "marfat", englishName: "Marfat", hindiName: "मारफत"),
-                        Book(id: 13, title: "khulasa", englishName: "Khulasha", hindiName: "खुलाशा"),
-                        Book(id: 14, title: "khilawat", englishName: "Khilawat", hindiName: "खिलवत"),
-                        Book(id: 15, title: "chhotekayamatnama", englishName: "Chhote Kyamatnama", hindiName: "छोटे क्यामत्नामा"),
-                        Book(id: 16, title: "badekayamatnama", englishName: "Bade Kyamatnama", hindiName: "बडे क्यामत्नामा")]
-    
+    @ObservedObject var viewModel = EbooksViewModel()
     
     var body: some View {
+        
         NavigationView {
             ScrollView {
-                ForEach(0..<books.count/2) { row in
-                    HStack(spacing: 0) {
-                        ForEach(0..<2) { column in
-                            NavigationLink(destination: BookItemView(book: self.books[row * 2 + column])) {
-                                BookItemView(book: self.books[row * 2 + column])
-                            }
+                
+                GridView(rows: viewModel.rowCount, columns: viewModel.columnCount) { row, column in
+                    if let ebook = viewModel.getEbook(row, column) {
+                        NavigationLink(destination: PDFKitView(displayPDF: ebook)) {
+                            EbookItemView(ebook: ebook)
                         }
+                    } else {
+                        EmptyView()
                     }
                 }
-            }
-            .navigationBarTitle("Kuljam Swaroop")
+            }.padding(.bottom, 10)
+            .navigationBarTitle("Ebooks", displayMode: .automatic)
         }
     }
 }
 
 
-struct BookItemView: View {
+struct EbookItemView: View {
     
-    var book: Book
+    var ebook: Ebook
     
     var body: some View {
         
         VStack(alignment: .center) {
             Image(systemName: "book.fill").resizable().foregroundColor(.white).frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Text(book.hindiName).foregroundColor(.white).font(Font.system(size: 20, weight: .bold, design: .default)).lineLimit(1)
-            Text(book.englishName).foregroundColor(.white).font(Font.system(size: 18, weight: .semibold, design: .default)).lineLimit(1)
+            Text(ebook.title).foregroundColor(.white).font(Font.system(size: 20, weight: .bold, design: .default)).lineLimit(1)
+            Text(ebook.author).foregroundColor(.white).font(Font.system(size: 18, weight: .semibold, design: .default)).lineLimit(1)
         }
         .padding()
         .frame(minWidth: 0,
@@ -78,10 +54,3 @@ struct BookItemView: View {
     }
     
 }
-
-
-//struct EbooksView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BookItemView(book: Book(id: 1, title: "Praksah Hindusthani", englishName: "Praksah Hindusthani", hindiName: "Praksah Hindusthani"))
-//    }
-//}
