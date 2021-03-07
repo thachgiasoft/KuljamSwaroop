@@ -16,3 +16,4 @@ class Config {
     let brandColor = Color("BrandColor")
     
 }
+

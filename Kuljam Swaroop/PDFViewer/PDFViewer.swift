@@ -9,77 +9,56 @@
 import SwiftUI
 import PDFKit
 
-public enum PDFType {
-    case local
-    case remote
-}
 
 public struct PDFViewer: View {
-    var pdfName: String = ""
-    var pdfUrlString: String = ""
-    @State private var showingShare = false
-    @State private var pdfType: PDFType = .local
 
-    public init(pdfName: String? = nil, pdfUrlString: String? = nil) {
-        self.pdfName = pdfName ?? ""
-        self.pdfUrlString = pdfUrlString ?? ""
+    @State private var showShareSheet = false
+    @State var dialogDisplayed = false
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State private var rect1: CGRect = .zero
+    @State var currentPage = 0
+    
+    var displayPDF: PDFDisplayable
+
+    public init(displayPDF: PDFDisplayable) {
+        self.displayPDF = displayPDF
     }
     
     public var body: some View {
         GeometryReader { geometry in
             ZStack {
-                PDFReaderView(pdfName: self.pdfName, pdfUrlString: self.pdfUrlString, pdfType: self.pdfName.count > 0 ? .local : .remote, viewSize: geometry.size)
-                    .navigationBarItems(trailing:
-                        Button(action: {
-                            self.showingShare = true
-                        }, label: {
-                            Image(systemName: "arrowshape.turn.up.right.circle")
-                                .resizable()
-                        })
-                        .sheet(isPresented: self.$showingShare, onDismiss: {
-                            //dismiss
-                        }, content: {
-                            if (self.pdfLocalData() != nil) {
-                                ActivityViewController(activityItems: [self.pdfLocalData()!, self.pdfName.count > 0 ? self.pdfName : URL(fileURLWithPath: self.pdfUrlString).deletingPathExtension().lastPathComponent])
-                            }
-                        })
-                    )
-                    .navigationBarTitle(self.pdfName.count > 0 ? self.pdfName : URL(fileURLWithPath: self.pdfUrlString).deletingPathExtension().lastPathComponent)
-                    .onAppear() {
-                        self.pdfType = self.pdfName.count > 0 ? .local : .remote
-                    }
-            }
-        }
-    }
-    
-    private func pdfLocalData() -> Data? {
-        if pdfType == .local {
-            if let url = Bundle.main.url(forResource: pdfName, withExtension: "pdf") {
-                do {
-                    let pdfLocalData = try Data(contentsOf: url)
-                    return pdfLocalData
-                } catch let error {
-                    print(error.localizedDescription)
+                if displayPDF.isRemote {
+                    WebView(url: displayPDF.pdfURL)
+                } else {
+                    PDFReaderView(viewSize: geometry.size, currentPage: $currentPage, displayPDF: displayPDF)
+                }
+                if dialogDisplayed {
+                    CustomAlertWindow(showingCustomWindow: $dialogDisplayed, pdf: displayPDF, page: currentPage)
                 }
             }
-        } else {
-            if let cachesDirectoryUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first, let lastPathComponent = URL(string: self.pdfUrlString)?.lastPathComponent {
-                let url = cachesDirectoryUrl.appendingPathComponent(lastPathComponent)
-                do {
-                    let pdfLocalData = try Data(contentsOf: url)
-                    return pdfLocalData
-                } catch let error {
-                    print(error.localizedDescription)
+        }.navigationBarTitle(displayPDF.navigationTitle, displayMode: .inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Label("", systemImage: "square.and.arrow.up.on.square.fill")
+                        .foregroundColor(.black)
+                        .onTapGesture {
+                            self.showShareSheet = true
+                        }
+                    Label("", systemImage: "square.and.arrow.down")
+                        .foregroundColor(.black)
+                        .onTapGesture {
+                            dialogDisplayed.toggle()
+                        }
                 }
             }
+        }.sheet(isPresented: $showShareSheet) {
+//            self.rect1.uiImage as Any
+            ShareSheet(activityItems: ["Shared Via Nijanand App"])
         }
-        return nil
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton(presentationMode: presentationMode))
     }
 }
 
-struct PDFViewer_Previews: PreviewProvider {
-    static var previews: some View {
-        PDFViewer()
-            .previewLayout(.sizeThatFits)
-    }
-}

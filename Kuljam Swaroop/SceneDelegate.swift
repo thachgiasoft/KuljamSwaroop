@@ -29,6 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        Theme.shared.setUpTheme()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

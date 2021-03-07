@@ -20,24 +20,25 @@ struct MainView: View {
                  DashboardView()
                    .tabItem {
                       Image(systemName: "squareshape.squareshape.dashed")
-                      Text("Nijanand")
+                      Text("निजानन्द")
                  }
                 KuljamView()
                    .tabItem {
                       Image(systemName: "books.vertical")
-                      Text("Kuljam")
+                      Text("कुलजम")
                 }
                  EbooksView()
                    .tabItem {
                       Image(systemName: "text.book.closed.fill")
-                      Text("Ebook")
+                      Text("साहित्य")
                 }
                 ChaupaiView()
                    .tabItem {
-                      Image(systemName: "square.and.arrow.down.on.square")
-                      Text("Chaupai")
+                    Image(systemName: "square.and.arrow.down.on.square")
+                    Text("चौपाइ")
                 }
             }
+            .accentColor(.white)
         }
 
     }

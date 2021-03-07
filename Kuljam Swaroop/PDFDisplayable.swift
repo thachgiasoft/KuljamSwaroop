@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PDFDisplayable {
+public protocol PDFDisplayable {
     var navigationTitle: String { get }
     var pdfURL: URL { get }
     var isRemote: Bool { get }

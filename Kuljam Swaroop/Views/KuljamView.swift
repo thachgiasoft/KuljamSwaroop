@@ -12,7 +12,6 @@ import PDFViewer
 struct KuljamView: View {
     
     let bookListViewModel = BookListViewModel()
-    private var active: Bool = false
     
     var body: some View {
         
@@ -20,7 +19,7 @@ struct KuljamView: View {
             ScrollView {
                 GridView(rows: bookListViewModel.rowCount, columns: bookListViewModel.columnCount) { row, column in
                     if let book = bookListViewModel.getBook(row, column) {
-                        NavigationLink(destination: PDFKitView(displayPDF: book)) {
+                        NavigationLink(destination: PDFViewer(displayPDF: book)) {
                             BookItemView(book: book)
                         }
                     } else {
@@ -28,7 +27,7 @@ struct KuljamView: View {
                     }
                 }
             }.padding(.bottom, 10)
-            .navigationBarTitle(!active ? "Kuljam Swaroop" : "", displayMode: !active ? .automatic : .inline )
+            .navigationBarTitle("कुल्जम स्वरूप")
         }
     }
 }

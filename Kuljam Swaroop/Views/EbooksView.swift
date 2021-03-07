@@ -19,7 +19,7 @@ struct EbooksView: View {
                 
                 GridView(rows: viewModel.rowCount, columns: viewModel.columnCount) { row, column in
                     if let ebook = viewModel.getEbook(row, column) {
-                        NavigationLink(destination: PDFKitView(displayPDF: ebook)) {
+                        NavigationLink(destination: PDFViewer(displayPDF: ebook)) {
                             EbookItemView(ebook: ebook)
                         }
                     } else {
@@ -27,7 +27,7 @@ struct EbooksView: View {
                     }
                 }
             }.padding(.bottom, 10)
-            .navigationBarTitle("Ebooks", displayMode: .automatic)
+            .navigationBarTitle("साहित्य", displayMode: .automatic)
         }
     }
 }

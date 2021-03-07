@@ -70,11 +70,25 @@ struct Ebook: Identifiable, PDFDisplayable {
     }
     
     var pdfURL: URL {
-        return URL(string: url)!
+        if isRemote {
+            return URL(string: url)!
+        } else {
+            return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent(URL(string: url)!.lastPathComponent)
+        }
     }
     
     var isRemote: Bool {
-        return true
+        if let cachesDirectoryUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
+            let dataURL = cachesDirectoryUrl.appendingPathComponent(URL(string: url)!.lastPathComponent)
+            do {
+                _ = try Data(contentsOf: dataURL)
+                return false
+            } catch _ {
+                return true
+            }
+        } else {
+            return true
+        }
     }
 
 }
