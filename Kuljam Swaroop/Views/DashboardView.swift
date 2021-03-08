@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import iPages
 
 struct DashboardView: View {
     

@@ -12,28 +12,48 @@ class SavedChaupaiViewModel: ObservableObject {
     
     @Published var chaupaiList: [SavedChaupai] = []
     
-    let chaupaiPreferenceKey = "SAVED_CHAUPAI_KEY"
+    var observer: NSKeyValueObservation?
     
     init() {
         chaupaiList = savedChaupais
+        
+        observer = UserDefaults.standard.observe(\.chaupaiListData, options: [.initial, .new], changeHandler: { (defaults, change) in
+            self.chaupaiList = self.savedChaupais
+        })
+    }
+    
+    deinit {
+        observer?.invalidate()
+    }
+    
+    func deleteChaupai(chaupaiID: Int) {
+        
+        if let chaupaiIndex = chaupaiList.firstIndex(where: {$0.id == chaupaiID}) {
+            chaupaiList.remove(at: chaupaiIndex)
+        }
+        saveChaupai()
+    }
+    
+    func addChaupai(chaupaiTitle: String, book: PDFDisplayable, page: Int, chaupaiNumber: Int) {
+        
+        chaupaiList = savedChaupais
+        chaupaiList.append(SavedChaupai(id: UUID().hashValue, bookURL: book.pdfURL, bookTitle: book.navigationTitle, chaupaiNumber: chaupaiNumber, chaupaiTitle: chaupaiTitle, page: page))
+        saveChaupai()
     }
     
     var savedChaupais: [SavedChaupai] {
         
-        
-        guard let decodedChaupais = UserDefaults.standard.data(forKey: chaupaiPreferenceKey), let chaupais = NSKeyedUnarchiver.unarchiveObject(with: decodedChaupais) as? [SavedChaupai] else {
+        guard let decodedChaupais = UserDefaults.standard.chaupaiListData, let chaupais = NSKeyedUnarchiver.unarchiveObject(with: decodedChaupais) as? [SavedChaupai] else {
             return []
         }
         return chaupais
     }
     
-    func saveChaupai(chaupaiTitle: String, book: PDFDisplayable, page: Int, chaupaiNumber: Int) {
-        chaupaiList = savedChaupais
-        chaupaiList.append(SavedChaupai(id: 0, bookURL: book.pdfURL, bookTitle: book.navigationTitle, chaupaiNumber: chaupaiNumber, chaupaiTitle: chaupaiTitle, page: page))
+    func saveChaupai() {
+        
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: chaupaiList)
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(encodedData, forKey: chaupaiPreferenceKey)
-        userDefaults.synchronize()
+        UserDefaults.standard.chaupaiListData = encodedData
+        
     }
     
 }
@@ -67,12 +87,29 @@ class SavedChaupai: NSObject, Identifiable, NSCoding {
     }
     
     required convenience init?(coder: NSCoder) {
-        let id = coder.decodeInteger(forKey: "id") as! Int
+        let id = coder.decodeInteger(forKey: "id")
         let bookURL = coder.decodeObject(forKey: "bookURL") as! URL
         let bookTitle = coder.decodeObject(forKey: "bookTitle") as! String
-        let chaupaiNumber = coder.decodeObject(forKey: "chaupaiNumber") as? Int ?? 0
+        let chaupaiNumber = coder.decodeInteger(forKey: "chaupaiNumber")
         let chaupaiTitle = coder.decodeObject(forKey: "chaupaiTitle") as! String
-        let page = coder.decodeObject(forKey: "page") as? Int ?? 0
+        let page = coder.decodeInteger(forKey: "page")
         self.init(id: id, bookURL: bookURL, bookTitle: bookTitle, chaupaiNumber: chaupaiNumber, chaupaiTitle: chaupaiTitle, page: page)
     }
+}
+
+extension SavedChaupai: PDFDisplayable {
+    
+    var navigationTitle: String {
+        return bookTitle
+    }
+    
+    var pdfURL: URL {
+        return bookURL
+    }
+    
+    var isRemote: Bool {
+        return false
+    }
+    
+    
 }

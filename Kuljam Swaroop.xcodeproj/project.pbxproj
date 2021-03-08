@@ -29,6 +29,7 @@
 		2F6A6A4A25F4618800AEED23 /* ChaupaiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */; };
 		2F6A6A4F25F49D1800AEED23 /* CustomAlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A4E25F49D1800AEED23 /* CustomAlertWindow.swift */; };
 		2F8559A725F4C7F6008D18C3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8559A625F4C7F6008D18C3 /* Strings.swift */; };
+		2F8559B625F602AA008D18C3 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8559B525F602AA008D18C3 /* Preferences.swift */; };
 		2F85F29A25F21C4200139802 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29925F21C4200139802 /* FirebaseInAppMessaging-Beta */; };
 		2F85F29C25F21C4200139802 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29B25F21C4200139802 /* FirebaseAnalytics */; };
 		2F85F29E25F21C4200139802 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29D25F21C4200139802 /* FirebaseRemoteConfig */; };
@@ -110,6 +111,7 @@
 		2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaupaiViewModel.swift; sourceTree = "<group>"; };
 		2F6A6A4E25F49D1800AEED23 /* CustomAlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertWindow.swift; sourceTree = "<group>"; };
 		2F8559A625F4C7F6008D18C3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		2F8559B525F602AA008D18C3 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2F85F2A925F2201E00139802 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F85F2B325F230CB00139802 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		2F230FE125E780FC00461E35 /* Kuljam Swaroop */ = {
 			isa = PBXGroup;
 			children = (
+				2F8559B425F60299008D18C3 /* Utils */,
 				2F6A6A3825F44E1800AEED23 /* PDFViewer */,
 				2FFA501425F353B600FECC49 /* Config */,
 				2FFA4FFA25F3301F00FECC49 /* Resources */,
@@ -270,6 +273,14 @@
 				2F6A6A3D25F44E1800AEED23 /* DownloadManager.swift */,
 			);
 			path = PDFViewer;
+			sourceTree = "<group>";
+		};
+		2F8559B425F60299008D18C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2F8559B525F602AA008D18C3 /* Preferences.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2FF265C525EDFE2F00977380 /* ViewModel */ = {
@@ -511,6 +522,7 @@
 				2F8559A725F4C7F6008D18C3 /* Strings.swift in Sources */,
 				2F6A6A4225F44E1800AEED23 /* DownloadManager.swift in Sources */,
 				2F230FE725E780FC00461E35 /* MainView.swift in Sources */,
+				2F8559B625F602AA008D18C3 /* Preferences.swift in Sources */,
 				2F6A6A3E25F44E1800AEED23 /* ProgressView.swift in Sources */,
 				2FFA500C25F3349800FECC49 /* GridView.swift in Sources */,
 				2F23101825E7884300461E35 /* EbooksView.swift in Sources */,

@@ -57,6 +57,6 @@ struct CustomAlertWindow: View {
       }
     
     func saveChaupai() {
-        SavedChaupaiViewModel().saveChaupai(chaupaiTitle: nameValue, book: pdf, page: page, chaupaiNumber: Int(chaupaiNumberValue) ?? 0)
+        SavedChaupaiViewModel().addChaupai(chaupaiTitle: nameValue, book: pdf, page: page, chaupaiNumber: Int(chaupaiNumberValue) ?? 0)
     }
 }

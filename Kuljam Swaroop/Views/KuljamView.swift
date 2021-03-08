@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import PDFViewer
 
 struct KuljamView: View {
     

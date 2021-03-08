@@ -13,8 +13,10 @@ struct PDFReaderView : UIViewRepresentable {
 
     var viewSize: CGSize = CGSize(width: 0.0, height: 0.0)
     let pdfThumbnailSize = CGSize(width: 40, height: 54)
-    let pdfView = PDFView()
+    var pdfView = PDFView()
+    var pageNumberLabel = UILabel()
     let activityView = UIActivityIndicatorView(style: .large)
+    
     @Binding var currentPage: Int
     
     var displayPDF: PDFDisplayable
@@ -31,7 +33,8 @@ struct PDFReaderView : UIViewRepresentable {
         }
         
         @objc func handlePageChange(notification: Notification) {
-            parent.pageLabel(pdfView: parent.pdfView, viewSize: parent.viewSize)
+            parent.currentPage = parent.pdfView.currentPage?.pageRef?.pageNumber ?? 0
+            parent.setPageNumberLabel()
         }
         
         @objc func handleAnnotationHit(notification: Notification) {
@@ -46,7 +49,7 @@ struct PDFReaderView : UIViewRepresentable {
     }
     
     public func updateUIView(_ uiView: UIView, context: Context) {
-        if let targetPage = pdfView.document?.page(at: 10) {
+        if let targetPage = pdfView.document?.page(at: currentPage) {
             pdfView.go(to: targetPage)
         }
     }
@@ -60,7 +63,7 @@ struct PDFReaderView : UIViewRepresentable {
         pdfView.document = PDFDocument(url: displayPDF.pdfURL)
    
         thumbnailView(pdfView: pdfView, viewSize: viewSize)
-        pageLabel(pdfView: pdfView, viewSize: viewSize)
+        pageLabel(viewSize: viewSize)
         
         NotificationCenter.default.addObserver(context.coordinator, selector: #selector(context.coordinator.handlePageChange(notification:)), name: Notification.Name.PDFViewPageChanged, object: nil)
         NotificationCenter.default.addObserver(context.coordinator, selector: #selector(context.coordinator.handleAnnotationHit(notification:)), name: Notification.Name.PDFViewAnnotationHit, object: nil)
@@ -77,18 +80,16 @@ struct PDFReaderView : UIViewRepresentable {
         pdfView.addSubview(thumbnailView)
     }
     
-    private func pageLabel(pdfView: PDFView, viewSize: CGSize) {
-        for view in pdfView.subviews {
-            if view.isKind(of: UILabel.self) {
-                view.removeFromSuperview()
-            }
-        }
-        let pageNumberLabel = UILabel(frame: CGRect(x: viewSize.width - 88, y: 20, width: 80, height: 20))
+    func setPageNumberLabel() {
+        pageNumberLabel.text = String(format: "%@ of %d", pdfView.currentPage?.label ?? "0", pdfView.document?.pageCount ?? 0)
+    }
+    
+    private func pageLabel(viewSize: CGSize) {
+        pageNumberLabel.frame = CGRect(x: viewSize.width - 88, y: 20, width: 80, height: 20)
         pageNumberLabel.font = UIFont.systemFont(ofSize: 14.0)
         pageNumberLabel.textAlignment = .right
-        pageNumberLabel.text = String(format: "%@ of %d", pdfView.currentPage?.label ?? "0", pdfView.document?.pageCount ?? 0)
+        setPageNumberLabel()
         pdfView.addSubview(pageNumberLabel)
-        self.currentPage = pdfView.currentPage?.pageRef?.pageNumber ?? 0
     }
     
     private func pdfAnnotationTapped(annotation: PDFAnnotation) {
