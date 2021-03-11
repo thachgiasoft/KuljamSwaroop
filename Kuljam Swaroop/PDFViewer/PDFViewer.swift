@@ -13,9 +13,11 @@ import PDFKit
 public struct PDFViewer: View {
 
     @State private var showShareSheet = false
-    @State var dialogDisplayed = false
-    
+    @State private var showSaveSheet = false
+        
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @State private var rect1: CGRect = .zero
     @State var currentPage = 0
     
@@ -33,9 +35,6 @@ public struct PDFViewer: View {
                 } else {
                     PDFReaderView(viewSize: geometry.size, currentPage: $currentPage, displayPDF: displayPDF)
                 }
-                if dialogDisplayed {
-                    CustomAlertWindow(showingCustomWindow: $dialogDisplayed, pdf: displayPDF, page: currentPage)
-                }
             }
         }.navigationBarTitle(displayPDF.navigationTitle, displayMode: .inline)
         .toolbar {
@@ -49,13 +48,15 @@ public struct PDFViewer: View {
                     Label("", systemImage: "square.and.arrow.down")
                         .foregroundColor(.black)
                         .onTapGesture {
-                            dialogDisplayed.toggle()
+                            self.showSaveSheet = true
                         }
                 }
             }
         }.sheet(isPresented: $showShareSheet) {
 //            self.rect1.uiImage as Any
             ShareSheet(activityItems: ["Shared Via Nijanand App"])
+        }.sheet(isPresented: $showSaveSheet) {
+            AddChaupaiSheet(pdf: self.displayPDF, pageNumber: Int16(currentPage)).environment(\.managedObjectContext, PersistenceProvider.default.context)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton(presentationMode: presentationMode))

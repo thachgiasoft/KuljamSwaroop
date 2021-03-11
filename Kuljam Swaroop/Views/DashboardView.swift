@@ -29,7 +29,7 @@ struct DashboardView: View {
 
 struct ChaupaiItemView: View {
     
-    var chaupai: Chaupai
+    var chaupai: RemoteChaupai
     
     var body: some View {
         VStack {
@@ -43,7 +43,7 @@ struct ChaupaiCarousel: View
 {
     
     var UIState: UIStateModel
-    var chaupais: [Chaupai]
+    var chaupais: [RemoteChaupai]
     
     var body: some View
     {

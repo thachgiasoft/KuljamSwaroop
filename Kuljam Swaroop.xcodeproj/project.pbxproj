@@ -27,7 +27,6 @@
 		2F6A6A4125F44E1800AEED23 /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A3C25F44E1800AEED23 /* PDFReaderView.swift */; };
 		2F6A6A4225F44E1800AEED23 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A3D25F44E1800AEED23 /* DownloadManager.swift */; };
 		2F6A6A4A25F4618800AEED23 /* ChaupaiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */; };
-		2F6A6A4F25F49D1800AEED23 /* CustomAlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A4E25F49D1800AEED23 /* CustomAlertWindow.swift */; };
 		2F8559A725F4C7F6008D18C3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8559A625F4C7F6008D18C3 /* Strings.swift */; };
 		2F8559B625F602AA008D18C3 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8559B525F602AA008D18C3 /* Preferences.swift */; };
 		2F85F29A25F21C4200139802 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29925F21C4200139802 /* FirebaseInAppMessaging-Beta */; };
@@ -39,6 +38,12 @@
 		2F85F2AF25F2206D00139802 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */; };
 		2F85F2B425F230CB00139802 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F85F2B325F230CB00139802 /* Carousel.swift */; };
 		2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC49CB025E8E47A008DCE47 /* Config.swift */; };
+		2FE3370625F9FB3E00BA942E /* NijanandData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3370425F9FB3E00BA942E /* NijanandData.xcdatamodeld */; };
+		2FE3370C25F9FC4F00BA942E /* Chaupai+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3370A25F9FC4F00BA942E /* Chaupai+CoreDataClass.swift */; };
+		2FE3370D25F9FC4F00BA942E /* Chaupai+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3370B25F9FC4F00BA942E /* Chaupai+CoreDataProperties.swift */; };
+		2FE3371225F9FF2500BA942E /* AddChaupaiSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3371125F9FF2500BA942E /* AddChaupaiSheet.swift */; };
+		2FE3371725FA03FA00BA942E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3371625FA03FA00BA942E /* Persistence.swift */; };
+		2FE3372125FA14ED00BA942E /* Persistance+Chaupai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3372025FA14ED00BA942E /* Persistance+Chaupai.swift */; };
 		2FF265C725EDFE4500977380 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF265C625EDFE4500977380 /* BookListViewModel.swift */; };
 		2FF265D225EDFF0200977380 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF265D125EDFF0200977380 /* BookItemView.swift */; };
 		2FF265E225EE05B300977380 /* raas.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF265E125EE05B300977380 /* raas.pdf */; };
@@ -109,13 +114,18 @@
 		2F6A6A3C25F44E1800AEED23 /* PDFReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
 		2F6A6A3D25F44E1800AEED23 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaupaiViewModel.swift; sourceTree = "<group>"; };
-		2F6A6A4E25F49D1800AEED23 /* CustomAlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertWindow.swift; sourceTree = "<group>"; };
 		2F8559A625F4C7F6008D18C3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		2F8559B525F602AA008D18C3 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2F85F2A925F2201E00139802 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F85F2B325F230CB00139802 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		2FC49CB025E8E47A008DCE47 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2FE3370525F9FB3E00BA942E /* NijanandData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NijanandData.xcdatamodel; sourceTree = "<group>"; };
+		2FE3370A25F9FC4F00BA942E /* Chaupai+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chaupai+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2FE3370B25F9FC4F00BA942E /* Chaupai+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Chaupai+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2FE3371125F9FF2500BA942E /* AddChaupaiSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChaupaiSheet.swift; sourceTree = "<group>"; };
+		2FE3371625FA03FA00BA942E /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2FE3372025FA14ED00BA942E /* Persistance+Chaupai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistance+Chaupai.swift"; sourceTree = "<group>"; };
 		2FF265C625EDFE4500977380 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 		2FF265D125EDFF0200977380 /* BookItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
 		2FF265E125EE05B300977380 /* raas.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = raas.pdf; sourceTree = "<group>"; };
@@ -258,7 +268,7 @@
 				2FFA500325F332E600FECC49 /* WebView.swift */,
 				2FFA500B25F3349800FECC49 /* GridView.swift */,
 				2F6A6A2B25F43DBA00AEED23 /* View+Extensions.swift */,
-				2F6A6A4E25F49D1800AEED23 /* CustomAlertWindow.swift */,
+				2FE3371125F9FF2500BA942E /* AddChaupaiSheet.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -321,10 +331,15 @@
 		2FFA4FFA25F3301F00FECC49 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FE3371625FA03FA00BA942E /* Persistence.swift */,
+				2FE3370A25F9FC4F00BA942E /* Chaupai+CoreDataClass.swift */,
+				2FE3370B25F9FC4F00BA942E /* Chaupai+CoreDataProperties.swift */,
 				2FF2660925EE08BF00977380 /* Books */,
 				2F230FE825E780FD00461E35 /* Assets.xcassets */,
 				2F6A6A3025F4480800AEED23 /* Colors.xcassets */,
 				2F85F2AE25F2206D00139802 /* GoogleService-Info.plist */,
+				2FE3370425F9FB3E00BA942E /* NijanandData.xcdatamodeld */,
+				2FE3372025FA14ED00BA942E /* Persistance+Chaupai.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -500,11 +515,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6A6A4025F44E1800AEED23 /* PDFViewer.swift in Sources */,
-				2F6A6A4F25F49D1800AEED23 /* CustomAlertWindow.swift in Sources */,
 				2FF265D225EDFF0200977380 /* BookItemView.swift in Sources */,
 				2F85F2B425F230CB00139802 /* Carousel.swift in Sources */,
 				2F230FE325E780FC00461E35 /* AppDelegate.swift in Sources */,
 				2FFA4FFC25F3311400FECC49 /* PDFDisplayable.swift in Sources */,
+				2FE3370D25F9FC4F00BA942E /* Chaupai+CoreDataProperties.swift in Sources */,
 				2F6A6A3F25F44E1800AEED23 /* ActivityViewController.swift in Sources */,
 				2F23101A25E7884E00461E35 /* ChaupaiView.swift in Sources */,
 				2F230FE525E780FC00461E35 /* SceneDelegate.swift in Sources */,
@@ -512,16 +527,21 @@
 				2FFA4FF625F32D7600FECC49 /* EbooksViewModel.swift in Sources */,
 				2F23101625E7883800461E35 /* DashboardView.swift in Sources */,
 				2F23101425E7882900461E35 /* KuljamView.swift in Sources */,
+				2FE3372125FA14ED00BA942E /* Persistance+Chaupai.swift in Sources */,
 				2FFA500425F332E600FECC49 /* WebView.swift in Sources */,
+				2FE3370625F9FB3E00BA942E /* NijanandData.xcdatamodeld in Sources */,
 				2F6A6A2C25F43DBA00AEED23 /* View+Extensions.swift in Sources */,
+				2FE3371725FA03FA00BA942E /* Persistence.swift in Sources */,
 				2FFA501625F353DC00FECC49 /* Theme.swift in Sources */,
 				2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */,
 				2F6A6A4A25F4618800AEED23 /* ChaupaiViewModel.swift in Sources */,
 				2F6A6A4125F44E1800AEED23 /* PDFReaderView.swift in Sources */,
+				2FE3371225F9FF2500BA942E /* AddChaupaiSheet.swift in Sources */,
 				2F85F2AA25F2201E00139802 /* DashboardViewModel.swift in Sources */,
 				2F8559A725F4C7F6008D18C3 /* Strings.swift in Sources */,
 				2F6A6A4225F44E1800AEED23 /* DownloadManager.swift in Sources */,
 				2F230FE725E780FC00461E35 /* MainView.swift in Sources */,
+				2FE3370C25F9FC4F00BA942E /* Chaupai+CoreDataClass.swift in Sources */,
 				2F8559B625F602AA008D18C3 /* Preferences.swift in Sources */,
 				2F6A6A3E25F44E1800AEED23 /* ProgressView.swift in Sources */,
 				2FFA500C25F3349800FECC49 /* GridView.swift in Sources */,
@@ -887,6 +907,19 @@
 			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		2FE3370425F9FB3E00BA942E /* NijanandData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2FE3370525F9FB3E00BA942E /* NijanandData.xcdatamodel */,
+			);
+			currentVersion = 2FE3370525F9FB3E00BA942E /* NijanandData.xcdatamodel */;
+			path = NijanandData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F230FD725E780FB00461E35 /* Project object */;
 }

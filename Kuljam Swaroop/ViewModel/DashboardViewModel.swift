@@ -14,7 +14,7 @@ class DashboardViewModel: ObservableObject {
     
     var reference: DatabaseReference
     
-    @Published var chaupais: [Chaupai] = []
+    @Published var chaupais: [RemoteChaupai] = []
     
     init() {
         reference = Database.database().reference().child("Chaupais")
@@ -32,7 +32,7 @@ class DashboardViewModel: ObservableObject {
                     let dict = snap.value as! [String: Any]
                     let name = dict["title"] as? String ?? ""
                     let desc = dict["chaupai"] as? String ?? ""
-                    self.chaupais.append(Chaupai(id: count, title: name, desc: desc))
+                    self.chaupais.append(RemoteChaupai(id: count, title: name, desc: desc))
                     count += 1
                 }
             }
@@ -41,7 +41,7 @@ class DashboardViewModel: ObservableObject {
 }
 
 
-struct Chaupai: Identifiable {
+struct RemoteChaupai: Identifiable {
     
     var id: Int
     var title: String
