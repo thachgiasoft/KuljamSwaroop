@@ -19,7 +19,7 @@ struct PDFReaderView : UIViewRepresentable {
     
     @Binding var currentPage: Int
     
-    var displayPDF: PDFDisplayable
+    var url: URL
 
     public func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -60,7 +60,7 @@ struct PDFReaderView : UIViewRepresentable {
         pdfView.pageBreakMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pdfView.autoScales = true
         
-        pdfView.document = PDFDocument(url: displayPDF.pdfURL)
+        pdfView.document = PDFDocument(url: url)
    
         thumbnailView(pdfView: pdfView, viewSize: viewSize)
         pageLabel(viewSize: viewSize)

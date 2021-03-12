@@ -56,15 +56,12 @@ struct Book: Hashable, Identifiable, PDFDisplayable {
     var englishName: String
     var hindiName: String
     
-    var navigationTitle: String {
+    var displayTitle: String {
         return hindiName
     }
     
-    var pdfURL: URL {
+    var pdfRemoteURL: URL {
         return Bundle.main.url(forResource: title, withExtension: "pdf")!
     }
-    
-    var isRemote: Bool {
-        return false
-    }
+
 }

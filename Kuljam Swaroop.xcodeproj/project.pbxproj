@@ -27,6 +27,10 @@
 		2F6A6A4125F44E1800AEED23 /* PDFReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A3C25F44E1800AEED23 /* PDFReaderView.swift */; };
 		2F6A6A4225F44E1800AEED23 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A3D25F44E1800AEED23 /* DownloadManager.swift */; };
 		2F6A6A4A25F4618800AEED23 /* ChaupaiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */; };
+		2F837B3625FB499300EA99FA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F837B3525FB499300EA99FA /* TestView.swift */; };
+		2F837B5825FB513A00EA99FA /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F837B5725FB513A00EA99FA /* PDFViewModel.swift */; };
+		2F837B5D25FB526C00EA99FA /* NijanandFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F837B5C25FB526C00EA99FA /* NijanandFiles.swift */; };
+		2F837B6225FB61BA00EA99FA /* FailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F837B6125FB61BA00EA99FA /* FailedView.swift */; };
 		2F8559A725F4C7F6008D18C3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8559A625F4C7F6008D18C3 /* Strings.swift */; };
 		2F8559B625F602AA008D18C3 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8559B525F602AA008D18C3 /* Preferences.swift */; };
 		2F85F29A25F21C4200139802 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2F85F29925F21C4200139802 /* FirebaseInAppMessaging-Beta */; };
@@ -114,6 +118,10 @@
 		2F6A6A3C25F44E1800AEED23 /* PDFReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFReaderView.swift; sourceTree = "<group>"; };
 		2F6A6A3D25F44E1800AEED23 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaupaiViewModel.swift; sourceTree = "<group>"; };
+		2F837B3525FB499300EA99FA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		2F837B5725FB513A00EA99FA /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
+		2F837B5C25FB526C00EA99FA /* NijanandFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NijanandFiles.swift; sourceTree = "<group>"; };
+		2F837B6125FB61BA00EA99FA /* FailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedView.swift; sourceTree = "<group>"; };
 		2F8559A625F4C7F6008D18C3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		2F8559B525F602AA008D18C3 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		2F85F2A925F2201E00139802 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -257,6 +265,7 @@
 				2F23101725E7884300461E35 /* EbooksView.swift */,
 				2F23101925E7884E00461E35 /* ChaupaiView.swift */,
 				2FF265D125EDFF0200977380 /* BookItemView.swift */,
+				2F837B3525FB499300EA99FA /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 				2F6A6A3B25F44E1800AEED23 /* PDFViewer.swift */,
 				2F6A6A3C25F44E1800AEED23 /* PDFReaderView.swift */,
 				2F6A6A3D25F44E1800AEED23 /* DownloadManager.swift */,
+				2F837B6125FB61BA00EA99FA /* FailedView.swift */,
 			);
 			path = PDFViewer;
 			sourceTree = "<group>";
@@ -289,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				2F8559B525F602AA008D18C3 /* Preferences.swift */,
+				2F837B5C25FB526C00EA99FA /* NijanandFiles.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 				2F85F2A925F2201E00139802 /* DashboardViewModel.swift */,
 				2FFA4FF525F32D7600FECC49 /* EbooksViewModel.swift */,
 				2F6A6A4925F4618800AEED23 /* ChaupaiViewModel.swift */,
+				2F837B5725FB513A00EA99FA /* PDFViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -521,7 +533,9 @@
 				2FFA4FFC25F3311400FECC49 /* PDFDisplayable.swift in Sources */,
 				2FE3370D25F9FC4F00BA942E /* Chaupai+CoreDataProperties.swift in Sources */,
 				2F6A6A3F25F44E1800AEED23 /* ActivityViewController.swift in Sources */,
+				2F837B6225FB61BA00EA99FA /* FailedView.swift in Sources */,
 				2F23101A25E7884E00461E35 /* ChaupaiView.swift in Sources */,
+				2F837B5D25FB526C00EA99FA /* NijanandFiles.swift in Sources */,
 				2F230FE525E780FC00461E35 /* SceneDelegate.swift in Sources */,
 				2FF265C725EDFE4500977380 /* BookListViewModel.swift in Sources */,
 				2FFA4FF625F32D7600FECC49 /* EbooksViewModel.swift in Sources */,
@@ -535,9 +549,11 @@
 				2FFA501625F353DC00FECC49 /* Theme.swift in Sources */,
 				2FC49CB125E8E47A008DCE47 /* Config.swift in Sources */,
 				2F6A6A4A25F4618800AEED23 /* ChaupaiViewModel.swift in Sources */,
+				2F837B5825FB513A00EA99FA /* PDFViewModel.swift in Sources */,
 				2F6A6A4125F44E1800AEED23 /* PDFReaderView.swift in Sources */,
 				2FE3371225F9FF2500BA942E /* AddChaupaiSheet.swift in Sources */,
 				2F85F2AA25F2201E00139802 /* DashboardViewModel.swift in Sources */,
+				2F837B3625FB499300EA99FA /* TestView.swift in Sources */,
 				2F8559A725F4C7F6008D18C3 /* Strings.swift in Sources */,
 				2F6A6A4225F44E1800AEED23 /* DownloadManager.swift in Sources */,
 				2F230FE725E780FC00461E35 /* MainView.swift in Sources */,

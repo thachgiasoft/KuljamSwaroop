@@ -26,7 +26,7 @@ struct AddChaupaiSheet: View {
         NavigationView {
             Form {
                 Section(header: Text("Book Details")) {
-                    Text(pdf.navigationTitle)
+                    Text(pdf.displayTitle)
                     Text("Page number: \(self.pageNumber)")
                 }
                 
@@ -38,8 +38,8 @@ struct AddChaupaiSheet: View {
                 }
                 
                 Button(action: {
-                    guard self.chaupaiName != "", self.chaupaiNumber != "" else {return}
-                    PersistenceProvider.default.saveChaupai(chaupaiTitle: self.chaupaiName, documentURL: self.pdf.pdfURL.absoluteString, pageNumber: self.pageNumber, chaupaiNumber: Int16(self.chaupaiNumber) ?? 0, bookName: self.pdf.navigationTitle)
+                    guard self.chaupaiName != "", self.chaupaiNumber != "", let localURL = NijanandFiles.shared.fileDirForURL(urlString: pdf.pdfRemoteURL.absoluteString) else {return}
+                    PersistenceProvider.default.saveChaupai(chaupaiTitle: self.chaupaiName, documentURL: localURL.absoluteString, pageNumber: self.pageNumber, chaupaiNumber: Int16(self.chaupaiNumber) ?? 0, bookName: self.pdf.displayTitle)
                     presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add Chaupai")

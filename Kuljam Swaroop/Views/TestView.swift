@@ -9,29 +9,30 @@
 import SwiftUI
 import PDFKit
 
-public struct PDFViewer: View {
+
+public struct TestPDFViewer: View {
 
     @State private var showShareSheet = false
     @State private var showSaveSheet = false
-        
+
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @ObservedObject var pdfViewModel: PDFViewModel
-    
-//    @State private var rect1: CGRect = .zero
+
+    @State private var rect1: CGRect = .zero
     @State var currentPage = 0
-    
+
     var displayPDF: PDFDisplayable
 
     public init(displayPDF: PDFDisplayable) {
         self.displayPDF = displayPDF
         self.pdfViewModel = PDFViewModel(pdfURL: displayPDF.pdfRemoteURL.absoluteString)
-        
+
     }
-    
+
     public var body: some View {
-        
+
         GeometryReader { geometry in
             ZStack {
                 switch self.pdfViewModel.pdfState {

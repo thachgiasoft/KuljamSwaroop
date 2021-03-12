@@ -17,17 +17,12 @@ public class Chaupai: NSManagedObject {
 
 extension Chaupai : PDFDisplayable {
     
-    public var navigationTitle: String {
+    public var displayTitle: String {
         return bookName ?? ""
     }
     
-    public var pdfURL: URL {
+    public var pdfRemoteURL: URL {
         return URL(string: documentURL ?? "")!
     }
-    
-    public var isRemote: Bool {
-        return false
-    }
-    
 
 }

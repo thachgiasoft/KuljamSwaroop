@@ -9,12 +9,11 @@
 import SwiftUI
 
 public struct ProgressView: View {
-    var value: Binding<Float>
-    var visible: Binding<Bool>
+    
+    var value: Float
 
-    public init(value: Binding<Float>, visible: Binding<Bool>){
+    public init(value: Float){
         self.value = value
-        self.visible = visible
     }
     
     public var body: some View {
@@ -25,14 +24,14 @@ public struct ProgressView: View {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(Color.gray)
                 Circle()
-                    .trim(from: 0, to: CGFloat(value.wrappedValue))
+                    .trim(from: 0, to: CGFloat(value))
                     .stroke(Color.primary, lineWidth:5)
                     .frame(width:50)
                     .rotationEffect(Angle(degrees:-90))
-                Text(getPercentage(value.wrappedValue))
-            }.frame(width: 160, height: 120)
+                Text(getPercentage(value))
+            }.frame(width: 200, height: 150)
         }
-        .opacity(visible.wrappedValue ? 1 : 0)
+        .opacity(1)
     }
     
     func getPercentage(_ value:Float) -> String {

@@ -65,30 +65,12 @@ struct Ebook: Identifiable, PDFDisplayable {
     var url: String
     var author: String
     
-    var navigationTitle: String {
+    var displayTitle: String {
         return title
     }
     
-    var pdfURL: URL {
-        if isRemote {
-            return URL(string: url)!
-        } else {
-            return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent(URL(string: url)!.lastPathComponent)
-        }
+    var pdfRemoteURL: URL {
+        URL(string: url)!
     }
     
-    var isRemote: Bool {
-        if let cachesDirectoryUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first {
-            let dataURL = cachesDirectoryUrl.appendingPathComponent(URL(string: url)!.lastPathComponent)
-            do {
-                _ = try Data(contentsOf: dataURL)
-                return false
-            } catch _ {
-                return true
-            }
-        } else {
-            return true
-        }
-    }
-
 }

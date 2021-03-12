@@ -19,7 +19,7 @@ struct EbooksView: View {
                 
                 GridView(rows: viewModel.rowCount, columns: viewModel.columnCount) { row, column in
                     if let ebook = viewModel.getEbook(row, column) {
-                        NavigationLink(destination: PDFViewer(displayPDF: ebook)) {
+                        NavigationLink(destination: NavigationLazyView(PDFViewer(displayPDF: ebook))) {
                             EbookItemView(ebook: ebook)
                         }
                     } else {
@@ -53,4 +53,14 @@ struct EbookItemView: View {
         .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
     }
     
+}
+
+struct NavigationLazyView<Content: View>: View {
+    let build: () -> Content
+    init(_ build: @autoclosure @escaping () -> Content) {
+        self.build = build
+    }
+    var body: Content {
+        build()
+    }
 }
