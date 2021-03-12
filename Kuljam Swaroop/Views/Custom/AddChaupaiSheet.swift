@@ -10,7 +10,6 @@ import SwiftUI
 struct AddChaupaiSheet: View {
         
     @Environment (\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) private var viewContext
     
     @State var chaupaiNumber = ""
     @State var chaupaiName = ""
@@ -39,8 +38,8 @@ struct AddChaupaiSheet: View {
                 }
                 
                 Button(action: {
-                    guard self.chaupaiName != "" else {return}
-                    PersistenceProvider.default.saveChaupai(chaupaiTitle: self.chaupaiName, documentURL: self.pdf.pdfURL.absoluteString, pageNumber: self.pageNumber, chaupaiNumber: Int16(self.chaupaiNumber) ?? 0)
+                    guard self.chaupaiName != "", self.chaupaiNumber != "" else {return}
+                    PersistenceProvider.default.saveChaupai(chaupaiTitle: self.chaupaiName, documentURL: self.pdf.pdfURL.absoluteString, pageNumber: self.pageNumber, chaupaiNumber: Int16(self.chaupaiNumber) ?? 0, bookName: self.pdf.navigationTitle)
                     presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add Chaupai")

@@ -15,22 +15,24 @@ extension PersistenceProvider {
     
     var allListsRequest: NSFetchRequest<Chaupai> {
         let request: NSFetchRequest<Chaupai> = Chaupai.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Chaupai.id, ascending: false)]
+        request.sortDescriptors = []
         return request
     }
     
-    @discardableResult
-    func saveChaupai(chaupaiTitle: String, documentURL: String, pageNumber: Int16, chaupaiNumber: Int16) -> Chaupai {
+    func saveChaupai(chaupaiTitle: String, documentURL: String, pageNumber: Int16, chaupaiNumber: Int16, bookName: String) {
         
         let newChaupai = Chaupai(context: context)
         newChaupai.chaupaiTitle = chaupaiTitle
         newChaupai.documentURL = documentURL
         newChaupai.pageNumber = pageNumber
         newChaupai.chaupaiNumber = chaupaiNumber
+        newChaupai.bookName = bookName
         newChaupai.id = UUID()
         
-        try? context.save()
-        return newChaupai
+        context.performAndWait {
+            try? context.save()
+        }
+        
     }
     
     func delete(_ chaupai: Chaupai) {

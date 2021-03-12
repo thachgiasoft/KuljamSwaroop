@@ -21,11 +21,11 @@ struct ChaupaiView: View {
                 ForEach(chaupais) { chaupai in
                     NavigationLink(destination: PDFViewer(displayPDF: chaupai)) {
                         HStack {
-                            Image(systemName: "book.fill").resizable().foregroundColor(Color("BrandColor")).frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            Image(systemName: "book.fill").resizable().foregroundColor(Color("BrandColor")).frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             VStack(alignment: .leading) {
                                 Text(chaupai.chaupaiTitle ?? "").font(.headline)
-                                Text("Book \(chaupai.bookName ?? "") : \(chaupai.pageNumber)").font(.subheadline)
-                            }
+                                Text("\(chaupai.bookName ?? "") : \(chaupai.pageNumber)").font(.subheadline)
+                            }.padding(.leading, 5)
                             Spacer()
                         }.padding()
                     }                    

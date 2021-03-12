@@ -56,7 +56,7 @@ public struct PDFViewer: View {
 //            self.rect1.uiImage as Any
             ShareSheet(activityItems: ["Shared Via Nijanand App"])
         }.sheet(isPresented: $showSaveSheet) {
-            AddChaupaiSheet(pdf: self.displayPDF, pageNumber: Int16(currentPage)).environment(\.managedObjectContext, PersistenceProvider.default.context)
+            AddChaupaiSheet(pdf: self.displayPDF, pageNumber: Int16(currentPage))
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton(presentationMode: presentationMode))

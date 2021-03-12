@@ -26,7 +26,9 @@ final class PersistenceProvider {
     }()
     
     let persistentContainer: NSPersistentContainer
+    
     var context: NSManagedObjectContext { persistentContainer.viewContext }
+    var backgroundContext: NSManagedObjectContext { persistentContainer.newBackgroundContext() }
     
     static let `default`: PersistenceProvider = PersistenceProvider()
     
